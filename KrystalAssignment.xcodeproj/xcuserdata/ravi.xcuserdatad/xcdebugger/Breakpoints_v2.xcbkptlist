@@ -7,16 +7,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7D265B36-95BB-4FA7-A856-BFD7F33D2AA1"
+            uuid = "D7ECA9D8-A0F6-4C58-8C53-19BB24308EFA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KrystalAssignment/ViewController.swift"
+            filePath = "KrystalAssignment/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "tableView(_:didSelectRowAt:)"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "errorHandler(forAFError:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D7ECA9D8-A0F6-4C58-8C53-19BB24308EFA - 96235867abf6d351"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KrystalAssignment.NetworkManager.errorHandler(forAFError: Alamofire.AFError) -&gt; ()"
+                  moduleName = "KrystalAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ravi/Desktop/KrystalAssignment/KrystalAssignment/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "3048">
+               </Location>
+               <Location
+                  uuid = "D7ECA9D8-A0F6-4C58-8C53-19BB24308EFA - 84ff2055a15382ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in KrystalAssignment.NetworkManager.errorHandler(forAFError: Alamofire.AFError) -&gt; ()"
+                  moduleName = "KrystalAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ravi/Desktop/KrystalAssignment/KrystalAssignment/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "288">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "97F382E6-BC1C-44B8-B47C-62B4D35F28EC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KrystalAssignment/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "errorHandler(forAFError:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -106,7 +106,11 @@ class NetworkManager {
             errorString = "Unknown Error Occured"
         }
         let controller = UIAlertController(title: "Network Error", message: errorString, preferredStyle: .alert)
-        UIApplication.shared.keyWindow?.topViewController()?.present(controller, animated: true, completion: nil)
+        UIApplication.shared.keyWindow?.topViewController()?.present(controller, animated: true, completion: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+                controller.dismiss(animated: true, completion: nil)
+            }
+        })
     }
 }
 
