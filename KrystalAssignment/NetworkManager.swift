@@ -16,6 +16,7 @@ enum Endpoints: String {
 
 
 class NetworkManager {
+    static let shared = NetworkManager()
     let baseURL = "https://staging.investo2o.com/assetmanager-ws/api"
     
     let headers: HTTPHeaders =

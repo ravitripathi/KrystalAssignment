@@ -15,22 +15,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZLh-nu-par" customClass="RTSearchBar" customModule="RTSearchBar">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZLh-nu-par" customClass="UISearchBar">
                                 <rect key="frame" x="10" y="54" width="394" height="80"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="CDZ-iL-cRC"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2dR-5r-AEu">
+                                <rect key="frame" x="10" y="144" width="394" height="708"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ZLh-nu-par" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="478-6D-DQu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZLh-nu-par" secondAttribute="trailing" constant="10" id="BmO-Wn-QLY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2dR-5r-AEu" secondAttribute="bottom" constant="10" id="Gdi-wQ-UAu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2dR-5r-AEu" secondAttribute="trailing" constant="10" id="L9c-4t-5K5"/>
                             <constraint firstItem="ZLh-nu-par" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Xae-Xe-1ps"/>
+                            <constraint firstItem="2dR-5r-AEu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="w5s-9L-lWp"/>
+                            <constraint firstItem="2dR-5r-AEu" firstAttribute="top" secondItem="ZLh-nu-par" secondAttribute="bottom" constant="10" id="y7A-K8-D4f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="ZLh-nu-par" id="f3x-wK-Nxk"/>
+                        <outlet property="tableView" destination="2dR-5r-AEu" id="LCh-OC-KFN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
