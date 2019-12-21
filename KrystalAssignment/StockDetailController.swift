@@ -8,19 +8,17 @@
 
 import UIKit
 import RappleProgressHUD
-//Name, Symbol, Currency,
-//Last Price, Pricing Date, High Price and Low Price
 
 class StockDetailController: UIViewController {
 
-    enum RowType: CaseIterable {
-        case Name
-        case Symbol
-        case Currency
-        case LastPrice
-        case PricingDate
-        case HighPrice
-        case LowPrice
+    enum RowType: String, CaseIterable {
+        case name = "Name"
+        case symbol = "Symbol"
+        case currency = "Currency"
+        case lastPrice = "Last Price"
+        case pricingDate = "Pricing Date"
+        case highPrice = "High Price"
+        case lowPrice = "Low Price"
     }
     
     @IBOutlet weak var tableView: UITableView!
@@ -30,7 +28,7 @@ class StockDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.register(UINib(nibName: "StockDetailCell", bundle: nil), forCellReuseIdentifier: "stockDetailCell")
         RappleActivityIndicatorView.startAnimatingWithLabel("Fetching Details", attributes: [RappleIndicatorStyleKey: RappleStyleApple])
         self.fetchDetails()
     }
@@ -57,22 +55,29 @@ extension StockDetailController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "stockDetailCell", for: indexPath) as! StockDetailCell
         switch RowType.allCases[indexPath.row] {
-        case .Name:
-            cell.textLabel?.text = self.assetDetail?.contractName
-        case .Symbol:
-            cell.textLabel?.text = self.assetDetail?.symbol
-        case .Currency:
-            cell.textLabel?.text = self.assetDetail?.currency
-        case .LastPrice:
-            cell.textLabel?.text = "\(self.assetDetail?.lastPrice ?? 0.0)"
-        case .PricingDate:
-            cell.textLabel?.text = self.assetDetail?.pricingDate
-        case .HighPrice:
-            cell.textLabel?.text = "\(self.assetDetail?.highPrice ?? 0.0)"
-        case .LowPrice:
-            cell.textLabel?.text = "\(self.assetDetail?.lowPrice ?? 0.0)"
+        case .name:
+            cell.titleLabel.text = RowType.name.rawValue
+            cell.valueLabel.text = self.assetDetail?.contractName
+        case .symbol:
+            cell.titleLabel.text = RowType.symbol.rawValue
+            cell.valueLabel.text = self.assetDetail?.symbol
+        case .currency:
+            cell.titleLabel.text = RowType.currency.rawValue
+            cell.valueLabel.text = self.assetDetail?.currency
+        case .lastPrice:
+            cell.titleLabel.text = RowType.lastPrice.rawValue
+            cell.valueLabel.text = "\(self.assetDetail?.lastPrice ?? 0.0)"
+        case .pricingDate:
+            cell.titleLabel.text = RowType.pricingDate.rawValue
+            cell.valueLabel.text = self.assetDetail?.pricingDate
+        case .highPrice:
+            cell.titleLabel.text = RowType.highPrice.rawValue
+            cell.valueLabel.text = "\(self.assetDetail?.highPrice ?? 0.0)"
+        case .lowPrice:
+            cell.titleLabel.text = RowType.lowPrice.rawValue
+            cell.valueLabel.text = "\(self.assetDetail?.lowPrice ?? 0.0)"
         }
         return cell
     }

@@ -38,13 +38,9 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDelegate {
-    
-}
-
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.data?.kristalList?.count ?? 0
+        self.data?.assetsList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
