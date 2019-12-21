@@ -16,7 +16,7 @@ class AutoCompleteResponse: Codable {
 
 // MARK: - AssetsList
 class AssetsList: Codable {
-    var assetID: String?
+    var assetId: String?
     var assetName: String?
     var symbol: String?
     var isin: String?
@@ -28,7 +28,7 @@ class AssetsList: Codable {
 
 // MARK: - KristalList
 class KristalList: Codable {
-    var kristalID: String?
+    var kristalId: String?
     var kristalName: String?
     var summary: String?
     var kristalImageURL: String?

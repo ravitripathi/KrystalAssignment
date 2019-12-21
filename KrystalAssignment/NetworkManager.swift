@@ -6,8 +6,9 @@
 //  Copyright © 2019 Ravi Tripathi. All rights reserved.
 //
 
-import Foundation
 import Alamofire
+import RappleProgressHUD
+import UIKit
 
 enum Endpoints: String {
     case search = "/v2/kristals/kristalassetsearch"
@@ -41,7 +42,14 @@ class NetworkManager {
                    parameters: param,
                    encoding: URLEncoding(destination: .queryString),
                    headers: headers).response { (afData) in
+                    
+                    if let error = afData.error {
+                        self.errorHandler(forAFError: error)
+                        completion(nil)
+                    }
+                    
                     guard let data = afData.data else {
+                        completion(nil)
                         return
                     }
                     let decoder = JSONDecoder()
@@ -63,7 +71,14 @@ class NetworkManager {
                    parameters: param,
                    encoding: URLEncoding(destination: .queryString),
                    headers: headers).response { (afData) in
+                    
+                    if let error = afData.error {
+                        self.errorHandler(forAFError: error)
+                        completion(nil)
+                    }
+                    
                     guard let data = afData.data else {
+                        completion(nil)
                         return
                     }
                     let decoder = JSONDecoder()
@@ -71,5 +86,45 @@ class NetworkManager {
                     completion(decodedResponse)
         }
         
+    }
+    
+    func errorHandler(forAFError error: AFError) {
+        RappleActivityIndicatorView.stopAnimation()
+        var errorString = ""
+        switch error {
+        case .invalidURL(let url):
+            errorString = "Invalid URL: \(url) - \(error.localizedDescription)"
+        case .parameterEncodingFailed( _):
+            errorString = "Parameter encoding failed: \(error.localizedDescription)"
+        case .multipartEncodingFailed( _):
+            errorString = "Multipart encoding failed: \(error.localizedDescription)"
+        case .responseValidationFailed( _):
+            errorString = "Response validation failed: \(error.localizedDescription)"
+        case .responseSerializationFailed( _):
+            errorString = "Response serialization failed: \(error.localizedDescription)"
+        default:
+            errorString = "Unknown Error Occured"
+        }
+        let controller = UIAlertController(title: "Network Error", message: errorString, preferredStyle: .alert)
+        UIApplication.shared.keyWindow?.topViewController()?.present(controller, animated: true, completion: nil)
+    }
+}
+
+
+extension UIWindow {
+    func topViewController() -> UIViewController? {
+        var top = self.rootViewController
+        while true {
+            if let presented = top?.presentedViewController {
+                top = presented
+            } else if let nav = top as? UINavigationController {
+                top = nav.visibleViewController
+            } else if let tab = top as? UITabBarController {
+                top = tab.selectedViewController
+            } else {
+                break
+            }
+        }
+        return top
     }
 }
