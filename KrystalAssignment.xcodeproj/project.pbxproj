@@ -53,6 +53,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		412F76FF23AE20D000C4F472 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4148A64723AE1B1700409B3B /* StockDetailCell.swift */,
+				4148A64823AE1B1700409B3B /* StockDetailCell.xib */,
+				4148A62723ADFC3000409B3B /* Main.storyboard */,
+				4148A62C23ADFC3100409B3B /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		412F770023AE20E700C4F472 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4148A62123ADFC3000409B3B /* AppDelegate.swift */,
+				4148A62323ADFC3000409B3B /* SceneDelegate.swift */,
+				4148A62A23ADFC3100409B3B /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		412F770123AE20FD00C4F472 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4148A62523ADFC3000409B3B /* ViewController.swift */,
+				4148A64223AE0FB500409B3B /* StockDetailController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		4148A61523ADFC3000409B3B = {
 			isa = PBXGroup;
 			children = (
@@ -72,18 +102,12 @@
 		4148A62023ADFC3000409B3B /* KrystalAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				412F770123AE20FD00C4F472 /* Controllers */,
+				412F770023AE20E700C4F472 /* Supporting Files */,
+				412F76FF23AE20D000C4F472 /* Views */,
 				4148A63823ADFDAD00409B3B /* Models */,
-				4148A62123ADFC3000409B3B /* AppDelegate.swift */,
-				4148A62323ADFC3000409B3B /* SceneDelegate.swift */,
-				4148A62523ADFC3000409B3B /* ViewController.swift */,
-				4148A62723ADFC3000409B3B /* Main.storyboard */,
-				4148A62A23ADFC3100409B3B /* Assets.xcassets */,
-				4148A62C23ADFC3100409B3B /* LaunchScreen.storyboard */,
-				4148A62F23ADFC3100409B3B /* Info.plist */,
-				4148A64723AE1B1700409B3B /* StockDetailCell.swift */,
-				4148A64823AE1B1700409B3B /* StockDetailCell.xib */,
 				4148A63E23ADFF1B00409B3B /* NetworkManager.swift */,
-				4148A64223AE0FB500409B3B /* StockDetailController.swift */,
+				4148A62F23ADFC3100409B3B /* Info.plist */,
 			);
 			path = KrystalAssignment;
 			sourceTree = "<group>";
