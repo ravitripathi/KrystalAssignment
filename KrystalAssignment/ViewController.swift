@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Search For Stocks"
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.tableView.dataSource = self
         self.tableView.delegate = self

@@ -79,6 +79,9 @@ extension StockDetailController: UITableViewDataSource {
             cell.titleLabel.text = RowType.lowPrice.rawValue
             cell.valueLabel.text = "\(self.assetDetail?.lowPrice ?? 0.0)"
         }
+        if cell.valueLabel.text?.isEmpty ?? true {
+            cell.valueLabel.text = "Data Not Available"
+        }
         return cell
     }
 }
